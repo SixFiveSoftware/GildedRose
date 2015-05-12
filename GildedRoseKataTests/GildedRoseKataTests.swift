@@ -13,7 +13,14 @@ class GildedRoseKataTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        items = [
+            Item(name: "+5 Dexterity Vest", sellIn: 10, quality: 20),
+            Item(name: "Aged Brie", sellIn: 2, quality: 0),
+            Item(name: "Elixir of the Mongoose", sellIn: 5, quality: 7),
+            Item(name: "Sulfuras, Hand of Ragnaros", sellIn: 0, quality: 80),
+            Item(name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 15, quality: 20),
+            Item(name: "Conjured Mana Cake", sellIn: 3, quality: 6),
+        ]
     }
     
     override func tearDown() {
@@ -25,12 +32,4 @@ class GildedRoseKataTests: XCTestCase {
         // This is an example of a functional test case.
         XCTAssert(true, "Pass")
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
