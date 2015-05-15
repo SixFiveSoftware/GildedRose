@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		554427D21B06390F00C92AEB /* NormalItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554427D11B06390F00C92AEB /* NormalItemTests.swift */; };
+		554427D41B063B7900C92AEB /* AgingItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554427D31B063B7900C92AEB /* AgingItemTests.swift */; };
+		554427D61B0641A300C92AEB /* LegendaryItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554427D51B0641A300C92AEB /* LegendaryItemTests.swift */; };
+		554427D81B0642B000C92AEB /* TicketItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554427D71B0642B000C92AEB /* TicketItemTests.swift */; };
+		554427DA1B06482800C92AEB /* ConjuredItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554427D91B06482800C92AEB /* ConjuredItemTests.swift */; };
 		55C394211B0235BC006B3769 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C394201B0235BC006B3769 /* AppDelegate.swift */; };
 		55C394231B0235BC006B3769 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C394221B0235BC006B3769 /* ViewController.swift */; };
 		55C394261B0235BC006B3769 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C394241B0235BC006B3769 /* Main.storyboard */; };
 		55C394281B0235BC006B3769 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C394271B0235BC006B3769 /* Images.xcassets */; };
 		55C3942B1B0235BC006B3769 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C394291B0235BC006B3769 /* LaunchScreen.xib */; };
-		55C394371B0235BC006B3769 /* GildedRoseKataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C394361B0235BC006B3769 /* GildedRoseKataTests.swift */; };
-		55C394411B0235E4006B3769 /* UpdateQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C394401B0235E4006B3769 /* UpdateQuality.swift */; };
-		55C394421B023610006B3769 /* UpdateQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C394401B0235E4006B3769 /* UpdateQuality.swift */; };
+		55C394411B0235E4006B3769 /* GildedRose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C394401B0235E4006B3769 /* GildedRose.swift */; };
+		55C394421B023610006B3769 /* GildedRose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C394401B0235E4006B3769 /* GildedRose.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +32,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		554427D11B06390F00C92AEB /* NormalItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalItemTests.swift; sourceTree = "<group>"; };
+		554427D31B063B7900C92AEB /* AgingItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgingItemTests.swift; sourceTree = "<group>"; };
+		554427D51B0641A300C92AEB /* LegendaryItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegendaryItemTests.swift; sourceTree = "<group>"; };
+		554427D71B0642B000C92AEB /* TicketItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketItemTests.swift; sourceTree = "<group>"; };
+		554427D91B06482800C92AEB /* ConjuredItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConjuredItemTests.swift; sourceTree = "<group>"; };
 		55C3941B1B0235BC006B3769 /* GildedRoseKata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GildedRoseKata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C3941F1B0235BC006B3769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55C394201B0235BC006B3769 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,8 +46,7 @@
 		55C3942A1B0235BC006B3769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		55C394301B0235BC006B3769 /* GildedRoseKataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GildedRoseKataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C394351B0235BC006B3769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55C394361B0235BC006B3769 /* GildedRoseKataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GildedRoseKataTests.swift; sourceTree = "<group>"; };
-		55C394401B0235E4006B3769 /* UpdateQuality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateQuality.swift; sourceTree = "<group>"; };
+		55C394401B0235E4006B3769 /* GildedRose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GildedRose.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				55C3941E1B0235BC006B3769 /* Supporting Files */,
-				55C394401B0235E4006B3769 /* UpdateQuality.swift */,
+				55C394401B0235E4006B3769 /* GildedRose.swift */,
 			);
 			path = GildedRoseKata;
 			sourceTree = "<group>";
@@ -102,7 +110,11 @@
 		55C394331B0235BC006B3769 /* GildedRoseKataTests */ = {
 			isa = PBXGroup;
 			children = (
-				55C394361B0235BC006B3769 /* GildedRoseKataTests.swift */,
+				554427D11B06390F00C92AEB /* NormalItemTests.swift */,
+				554427D31B063B7900C92AEB /* AgingItemTests.swift */,
+				554427D51B0641A300C92AEB /* LegendaryItemTests.swift */,
+				554427D71B0642B000C92AEB /* TicketItemTests.swift */,
+				554427D91B06482800C92AEB /* ConjuredItemTests.swift */,
 				55C394341B0235BC006B3769 /* Supporting Files */,
 			);
 			path = GildedRoseKataTests;
@@ -216,7 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55C394411B0235E4006B3769 /* UpdateQuality.swift in Sources */,
+				55C394411B0235E4006B3769 /* GildedRose.swift in Sources */,
 				55C394231B0235BC006B3769 /* ViewController.swift in Sources */,
 				55C394211B0235BC006B3769 /* AppDelegate.swift in Sources */,
 			);
@@ -226,8 +238,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55C394421B023610006B3769 /* UpdateQuality.swift in Sources */,
-				55C394371B0235BC006B3769 /* GildedRoseKataTests.swift in Sources */,
+				55C394421B023610006B3769 /* GildedRose.swift in Sources */,
+				554427D61B0641A300C92AEB /* LegendaryItemTests.swift in Sources */,
+				554427DA1B06482800C92AEB /* ConjuredItemTests.swift in Sources */,
+				554427D81B0642B000C92AEB /* TicketItemTests.swift in Sources */,
+				554427D21B06390F00C92AEB /* NormalItemTests.swift in Sources */,
+				554427D41B063B7900C92AEB /* AgingItemTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +431,7 @@
 				55C3943C1B0235BC006B3769 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55C3943D1B0235BC006B3769 /* Build configuration list for PBXNativeTarget "GildedRoseKataTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +440,7 @@
 				55C3943F1B0235BC006B3769 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
