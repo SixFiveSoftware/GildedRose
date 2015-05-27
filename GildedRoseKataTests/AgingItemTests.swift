@@ -20,25 +20,19 @@ class TestAgingItem: XCTestCase {
         super.setUp()
         gildedRose = GildedRose()
     }
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
     
     func testSellInDecreasesEachDay() {
-        var expectedSellIn = gildedRose.items[itemIndex].sellIn
+        let expectedSellIn = 1
         gildedRose.updateQuality()
-        expectedSellIn--
-        var newSellIn = gildedRose.items[itemIndex].sellIn
+        let newSellIn = gildedRose.items[itemIndex].sellIn
 
         XCTAssertEqual(newSellIn, expectedSellIn, "sellIn should decrease by one each day")
     }
     
     func testIncreasesInQualityOverTime() {
-        var expectedQuality = gildedRose.items[itemIndex].quality
+        let expectedQuality = 1
         gildedRose.updateQuality()
-        expectedQuality++
-        var newQuality = gildedRose.items[itemIndex].quality
+        let newQuality = gildedRose.items[itemIndex].quality
         XCTAssertEqual(newQuality, expectedQuality, "Cheese should increase in quality over time")
     }
     

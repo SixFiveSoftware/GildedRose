@@ -20,49 +20,48 @@ class TestConjuredItem: XCTestCase {
         gildedRose = GildedRose()
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        gildedRose = GildedRose()
-        super.tearDown()
-    }
 
     func testOneDay() {
-        var expectedQuality = gildedRose.items[itemIndex].quality
-        var expectedSellIn = gildedRose.items[itemIndex].sellIn
+        let expectedQuality = 0
+        let expectedSellIn = 0
+        
         gildedRose.updateQuality()
-        expectedSellIn--
-        expectedQuality -= 2
-        var newQuality = gildedRose.items[itemIndex].quality
-        var newSellIn = gildedRose.items[itemIndex].sellIn
+
+        let newQuality = gildedRose.items[itemIndex].quality
+        let newSellIn = gildedRose.items[itemIndex].sellIn
         
         XCTAssertEqual(newQuality, expectedQuality, "quality should decrease by one each day")
         XCTAssertEqual(newSellIn, expectedSellIn, "sellIn should decrease by one each day")
     }
 
     func testTwoDays() {
-        var oldQuality = gildedRose.items[itemIndex].quality
-        var oldSellIn = gildedRose.items[itemIndex].sellIn
-        gildedRose.updateQuality()
-        gildedRose.updateQuality()
-        var newQuality = gildedRose.items[itemIndex].quality
-        var newSellIn = gildedRose.items[itemIndex].sellIn
+        let expectedQuality = 0
+        let expectedSellIn = 0
         
-        XCTAssertEqual(newQuality, oldQuality - 4, "quality should decrease by one each day")
-        XCTAssertEqual(newSellIn, oldSellIn - 2, "sellIn should decrease by one each day")
+        gildedRose.updateQuality()
+        gildedRose.updateQuality()
+        
+        let newQuality = gildedRose.items[itemIndex].quality
+        let newSellIn = gildedRose.items[itemIndex].sellIn
+        
+        XCTAssertEqual(newQuality, expectedQuality, "quality should decrease by one each day")
+        XCTAssertEqual(newSellIn, expectedSellIn, "sellIn should decrease by one each day")
     }
 
     
     func testQualityDegradesTwiceAsFastAfterSellIn() {
-        var oldQuality = gildedRose.items[itemIndex].quality
-        var oldSellIn = gildedRose.items[itemIndex].sellIn
+        let expectedQuality = 0
+        let expectedSellIn = 0
+        
         for _ in (1...4) {
             gildedRose.updateQuality()
         }
-        var newQuality = gildedRose.items[itemIndex].quality
-        var newSellIn = gildedRose.items[itemIndex].sellIn
-        
-        XCTAssertEqual(newQuality, oldQuality - 6 - 2, "quality should decrease by two after sellIn days")
-        XCTAssertEqual(newSellIn, oldSellIn - 11, "sellIn should be -1")
+
+        let newQuality = gildedRose.items[itemIndex].quality
+        let newSellIn = gildedRose.items[itemIndex].sellIn
+
+        XCTAssertEqual(newQuality, expectedQuality, "quality should decrease by one each day")
+        XCTAssertEqual(newSellIn, expectedSellIn, "sellIn should decrease by one each day")
     }
     
     func testQualityIsNeverNegative() {

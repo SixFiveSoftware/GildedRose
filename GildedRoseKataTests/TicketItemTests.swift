@@ -18,57 +18,39 @@ class TestTicketItem: XCTestCase {
         super.setUp()
         gildedRose = GildedRose()
     }
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
+
     func testSellInDecreasesEachDay() {
-        var expectedSellIn = gildedRose.items[itemIndex].sellIn
+        let expectedSellIn = 14
         gildedRose.updateQuality()
-        expectedSellIn--
-        var newSellIn = gildedRose.items[itemIndex].sellIn
+        let newSellIn = gildedRose.items[itemIndex].sellIn
         
         XCTAssertEqual(newSellIn, expectedSellIn, "sellIn should decrease by one each day")
     }
     
     func testIncreasesInQualityByOneWithMoreThanTenDays() {
-        var expectedQuality = gildedRose.items[itemIndex].quality
+        let expectedQuality = 22
         gildedRose.updateQuality()
-        expectedQuality++
         gildedRose.updateQuality()
-        expectedQuality++
-        var newQuality = gildedRose.items[itemIndex].quality
+        let newQuality = gildedRose.items[itemIndex].quality
         XCTAssertEqual(newQuality, expectedQuality, "Cheese should increase in quality over time")
     }
 
     func testIncreasesInQualityByTwoWithTenToSix() {
-        var expectedQuality = gildedRose.items[itemIndex].quality
-        while(gildedRose.items[itemIndex].sellIn > 9) {
-            expectedQuality++
-            if gildedRose.items[itemIndex].sellIn <= 10 {
-                expectedQuality++
-            }
+        let expectedQuality = 27
+        while(gildedRose.items[itemIndex].sellIn >= 10) {
             gildedRose.updateQuality()
         }
-        var newQuality = gildedRose.items[itemIndex].quality
+        let newQuality = gildedRose.items[itemIndex].quality
         
         XCTAssertEqual(newQuality, expectedQuality , "Cheese should increase in quality over time")
     }
 
     func testIncreasesInQualityByThreeWithFiveToZero() {
-        var expectedQuality = gildedRose.items[itemIndex].quality
-        while(gildedRose.items[itemIndex].sellIn > 3) {
-            expectedQuality++
-            if gildedRose.items[itemIndex].sellIn <= 10 {
-                expectedQuality++
-            }
-            if gildedRose.items[itemIndex].sellIn <= 5 {
-                expectedQuality++
-            }
+        let expectedQuality = 44
+        while(gildedRose.items[itemIndex].sellIn >= 3) {
             gildedRose.updateQuality()
         }
-        var newQuality = gildedRose.items[itemIndex].quality
+        let newQuality = gildedRose.items[itemIndex].quality
         
         XCTAssertEqual(newQuality, expectedQuality , "Cheese should increase in quality over time")
     }

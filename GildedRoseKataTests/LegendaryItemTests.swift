@@ -18,23 +18,19 @@ class TestLegendaryItem: XCTestCase {
         super.setUp()
         gildedRose = GildedRose()
     }
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
     
     func testSellInNeverChanges() {
-        var expectedSellIn = gildedRose.items[itemIndex].sellIn
+        let expectedSellIn = gildedRose.items[itemIndex].sellIn
         gildedRose.updateQuality()
-        var newSellIn = gildedRose.items[itemIndex].sellIn
+        let newSellIn = gildedRose.items[itemIndex].sellIn
         
         XCTAssertEqual(newSellIn, expectedSellIn, "sellIn should not change")
     }
     
     func testQualityNeverChanges() {
-        var expectedQuality = gildedRose.items[itemIndex].quality
+        let expectedQuality = gildedRose.items[itemIndex].quality
         gildedRose.updateQuality()
-        var newQuality = gildedRose.items[itemIndex].quality
+        let newQuality = gildedRose.items[itemIndex].quality
         XCTAssertEqual(newQuality, expectedQuality, "quality should not change")
     }
     

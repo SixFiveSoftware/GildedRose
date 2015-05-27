@@ -22,38 +22,27 @@ class TestNormalItem: XCTestCase {
         gildedRose = GildedRose()
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        gildedRose = GildedRose()
-        super.tearDown()
-    }
-
     func testOneDay() {
-        var expectedQuality = gildedRose.items[itemIndex].quality
-        var expectedSellIn = gildedRose.items[itemIndex].sellIn
+        
         gildedRose.updateQuality()
-        expectedSellIn--
-        expectedQuality--
-        var newQuality = gildedRose.items[itemIndex].quality
-        var newSellIn = gildedRose.items[itemIndex].sellIn
+        let expectedQuality = 19
+        let expectedSellIn = 9
+
+        let newQuality = gildedRose.items[itemIndex].quality
+        let newSellIn = gildedRose.items[itemIndex].sellIn
         
         XCTAssertEqual(newQuality, expectedQuality, "quality should decrease by one each day")
         XCTAssertEqual(newSellIn, expectedSellIn, "sellIn should decrease by one each day")
     }
 
     func testQualityDegradesTwiceAsFastAfterSellIn() {
-        var expectedQuality = gildedRose.items[itemIndex].quality
-        var expectedSellIn = gildedRose.items[itemIndex].sellIn
+        let expectedQuality = 8
+        let expectedSellIn = -1
         for _ in (1...11) {
             gildedRose.updateQuality()
-            expectedSellIn--
-            expectedQuality--
-            if gildedRose.items[itemIndex].sellIn < 0 {
-                expectedQuality--
-            }
         }
-        var newQuality = gildedRose.items[itemIndex].quality
-        var newSellIn = gildedRose.items[itemIndex].sellIn
+        let newQuality = gildedRose.items[itemIndex].quality
+        let newSellIn = gildedRose.items[itemIndex].sellIn
 
         XCTAssertEqual(newQuality, expectedQuality, "quality should decrease by two after sellIn days")
         XCTAssertEqual(newSellIn, expectedSellIn, "sellIn should be -1")
