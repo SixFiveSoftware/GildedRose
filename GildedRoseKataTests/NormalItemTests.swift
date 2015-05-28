@@ -13,23 +13,27 @@ import UIKit
 import XCTest
 
 class TestNormalItem: XCTestCase {
-
     var gildedRose = GildedRose()
-    var itemIndex = 0
+    var item: Item!
     
     override func setUp() {
         super.setUp()
-        gildedRose = GildedRose()
+        item = Item(name: "+5 Dexterity Vest", sellIn: 10, quality: 20)
+        items = [item]
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        resetItems()
     }
     
     func testOneDay() {
-        
         gildedRose.updateQuality()
         let expectedQuality = 19
         let expectedSellIn = 9
 
-        let newQuality = gildedRose.items[itemIndex].quality
-        let newSellIn = gildedRose.items[itemIndex].sellIn
+        let newQuality = item.quality
+        let newSellIn = item.sellIn
         
         XCTAssertEqual(newQuality, expectedQuality, "quality should decrease by one each day")
         XCTAssertEqual(newSellIn, expectedSellIn, "sellIn should decrease by one each day")
@@ -41,8 +45,8 @@ class TestNormalItem: XCTestCase {
         for _ in (1...11) {
             gildedRose.updateQuality()
         }
-        let newQuality = gildedRose.items[itemIndex].quality
-        let newSellIn = gildedRose.items[itemIndex].sellIn
+        let newQuality = item.quality
+        let newSellIn = item.sellIn
 
         XCTAssertEqual(newQuality, expectedQuality, "quality should decrease by two after sellIn days")
         XCTAssertEqual(newSellIn, expectedSellIn, "sellIn should be -1")
@@ -52,7 +56,7 @@ class TestNormalItem: XCTestCase {
         for _ in (1...25) {
             gildedRose.updateQuality()
         }
-        var newQuality = gildedRose.items[itemIndex].quality
+        let newQuality = item.quality
         
         XCTAssertEqual(newQuality, 0, "quality should never be less than 0")
     }    

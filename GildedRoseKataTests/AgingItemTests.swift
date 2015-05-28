@@ -14,17 +14,23 @@ import XCTest
 
 class TestAgingItem: XCTestCase {
     var gildedRose = GildedRose()
-    var itemIndex = 1
+    var item: Item!
     
     override func setUp() {
         super.setUp()
-        gildedRose = GildedRose()
+        item = Item(name: "Aged Brie", sellIn: 2, quality: 0)
+        items = [item]
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        resetItems()
     }
     
     func testSellInDecreasesEachDay() {
         let expectedSellIn = 1
         gildedRose.updateQuality()
-        let newSellIn = gildedRose.items[itemIndex].sellIn
+        let newSellIn = item.sellIn
 
         XCTAssertEqual(newSellIn, expectedSellIn, "sellIn should decrease by one each day")
     }
@@ -32,7 +38,7 @@ class TestAgingItem: XCTestCase {
     func testIncreasesInQualityOverTime() {
         let expectedQuality = 1
         gildedRose.updateQuality()
-        let newQuality = gildedRose.items[itemIndex].quality
+        let newQuality = item.quality
         XCTAssertEqual(newQuality, expectedQuality, "Cheese should increase in quality over time")
     }
     
@@ -40,7 +46,7 @@ class TestAgingItem: XCTestCase {
         for _ in (1...55) {
             gildedRose.updateQuality()
         }
-        var newQuality = gildedRose.items[itemIndex].quality
+        var newQuality = item.quality
 
         XCTAssertEqual(newQuality, 50, "quality should never be greater than 50")
     }

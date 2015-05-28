@@ -12,25 +12,31 @@ import XCTest
 
 class TestLegendaryItem: XCTestCase {
     var gildedRose = GildedRose()
-    var itemIndex = 3
+    var item: Item!
     
     override func setUp() {
         super.setUp()
-        gildedRose = GildedRose()
+        item = Item(name: "Sulfuras, Hand of Ragnaros", sellIn: 0, quality: 80)
+        items = [item]
     }
     
+    override func tearDown() {
+        super.tearDown()
+        resetItems()
+    }
+
     func testSellInNeverChanges() {
-        let expectedSellIn = gildedRose.items[itemIndex].sellIn
+        let expectedSellIn = item.sellIn
         gildedRose.updateQuality()
-        let newSellIn = gildedRose.items[itemIndex].sellIn
+        let newSellIn = item.sellIn
         
         XCTAssertEqual(newSellIn, expectedSellIn, "sellIn should not change")
     }
     
     func testQualityNeverChanges() {
-        let expectedQuality = gildedRose.items[itemIndex].quality
+        let expectedQuality = item.quality
         gildedRose.updateQuality()
-        let newQuality = gildedRose.items[itemIndex].quality
+        let newQuality = item.quality
         XCTAssertEqual(newQuality, expectedQuality, "quality should not change")
     }
     

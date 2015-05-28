@@ -13,11 +13,18 @@ import XCTest
 class TestConjuredItem: XCTestCase {
     
     var gildedRose = GildedRose()
-    var itemIndex = 5
+    var item: Item!
     
     override func setUp() {
         super.setUp()
-        gildedRose = GildedRose()
+        item = Item(name: "Conjured Mana Cake", sellIn: 3, quality: 6)
+        items = [item]
+
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        resetItems()
     }
     
 
@@ -27,8 +34,8 @@ class TestConjuredItem: XCTestCase {
         
         gildedRose.updateQuality()
 
-        let newQuality = gildedRose.items[itemIndex].quality
-        let newSellIn = gildedRose.items[itemIndex].sellIn
+        let newQuality = item.quality
+        let newSellIn = item.sellIn
         
         XCTAssertEqual(newQuality, expectedQuality, "quality should decrease by one each day")
         XCTAssertEqual(newSellIn, expectedSellIn, "sellIn should decrease by one each day")
@@ -41,8 +48,8 @@ class TestConjuredItem: XCTestCase {
         gildedRose.updateQuality()
         gildedRose.updateQuality()
         
-        let newQuality = gildedRose.items[itemIndex].quality
-        let newSellIn = gildedRose.items[itemIndex].sellIn
+        let newQuality = item.quality
+        let newSellIn = item.sellIn
         
         XCTAssertEqual(newQuality, expectedQuality, "quality should decrease by one each day")
         XCTAssertEqual(newSellIn, expectedSellIn, "sellIn should decrease by one each day")
@@ -57,8 +64,8 @@ class TestConjuredItem: XCTestCase {
             gildedRose.updateQuality()
         }
 
-        let newQuality = gildedRose.items[itemIndex].quality
-        let newSellIn = gildedRose.items[itemIndex].sellIn
+        let newQuality = item.quality
+        let newSellIn = item.sellIn
 
         XCTAssertEqual(newQuality, expectedQuality, "quality should decrease by one each day")
         XCTAssertEqual(newSellIn, expectedSellIn, "sellIn should decrease by one each day")
@@ -68,7 +75,7 @@ class TestConjuredItem: XCTestCase {
         for _ in (1...25) {
             gildedRose.updateQuality()
         }
-        var newQuality = gildedRose.items[itemIndex].quality
+        var newQuality = item.quality
         
         XCTAssertEqual(newQuality, 0, "quality should decrease by two after sellIn days")
     }
