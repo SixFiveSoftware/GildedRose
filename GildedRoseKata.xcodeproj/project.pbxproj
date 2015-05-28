@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		550A1FF31B1794BD004302A7 /* SetUpItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550A1FF21B1794BD004302A7 /* SetUpItems.swift */; };
+		550A1FF51B179E9F004302A7 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 550A1FF41B179E9F004302A7 /* ReadMe.txt */; };
 		554427D21B06390F00C92AEB /* NormalItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554427D11B06390F00C92AEB /* NormalItemTests.swift */; };
 		554427D41B063B7900C92AEB /* AgingItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554427D31B063B7900C92AEB /* AgingItemTests.swift */; };
 		554427D61B0641A300C92AEB /* LegendaryItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554427D51B0641A300C92AEB /* LegendaryItemTests.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		550A1FF21B1794BD004302A7 /* SetUpItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpItems.swift; sourceTree = "<group>"; };
+		550A1FF41B179E9F004302A7 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		554427D11B06390F00C92AEB /* NormalItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalItemTests.swift; sourceTree = "<group>"; };
 		554427D31B063B7900C92AEB /* AgingItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgingItemTests.swift; sourceTree = "<group>"; };
 		554427D51B0641A300C92AEB /* LegendaryItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegendaryItemTests.swift; sourceTree = "<group>"; };
@@ -90,8 +92,9 @@
 		55C3941D1B0235BC006B3769 /* GildedRoseKata */ = {
 			isa = PBXGroup;
 			children = (
-				55C3941E1B0235BC006B3769 /* Supporting Files */,
+				550A1FF41B179E9F004302A7 /* ReadMe.txt */,
 				55C394401B0235E4006B3769 /* GildedRose.swift */,
+				55C3941E1B0235BC006B3769 /* Supporting Files */,
 			);
 			path = GildedRoseKata;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			files = (
 				55C394261B0235BC006B3769 /* Main.storyboard in Resources */,
 				55C3942B1B0235BC006B3769 /* LaunchScreen.xib in Resources */,
+				550A1FF51B179E9F004302A7 /* ReadMe.txt in Resources */,
 				55C394281B0235BC006B3769 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
